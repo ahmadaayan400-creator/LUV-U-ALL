@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>I AM AAYAN</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#000;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+.scene{
+    position:relative;
+    width:100%;
+    height:100vh;
+    overflow:hidden;
+    background:#000;
+}
+
+/* MUSIC BUTTON */
+#playBtn{
+    position:fixed;
+    top:16px;
+    left:50%;
+    transform:translateX(-50%);
+    z-index:50;
+
+    padding:9px 18px;
+
+    background:#050505;
+    color:#00e5ff;
+
+    border:1px solid #00e5ff;
+    border-radius:30px;
+
+    font-size:11px;
+    font-weight:bold;
+    letter-spacing:1px;
+
+    box-shadow:
+        0 0 8px #00e5ff,
+        0 0 20px #00e5ff;
+
+    cursor:pointer;
+}
+
+/* TEXT */
+.words{
+    position:absolute;
+
+    width:90%;
+    left:5%;
+
+    top:78vh;
+
+    text-align:center;
+
+    /* VERY SLOW SCROLL */
+    animation:scrollWords 150s linear infinite;
+}
+
+.line{
+    display:block;
+
+    margin:45px 0;
+
+    font-size:clamp(15px,4vw,30px);
+
+    line-height:1.45;
+
+    font-weight:700;
+
+    letter-spacing:.4px;
+
+    text-transform:uppercase;
+
+    animation:pulse 3s ease-in-out infinite;
+}
+
+/* RAINBOW */
+
+.c1{
+    color:#ff1744;
+    text-shadow:0 0 8px #ff1744,0 0 18px #ff1744;
+}
+
+.c2{
+    color:#ff6d00;
+    text-shadow:0 0 8px #ff6d00,0 0 18px #ff6d00;
+}
+
+.c3{
+    color:#ffee00;
+    text-shadow:0 0 8px #ffee00,0 0 18px #ffee00;
+}
+
+.c4{
+    color:#00ff66;
+    text-shadow:0 0 8px #00ff66,0 0 18px #00ff66;
+}
+
+.c5{
+    color:#00e5ff;
+    text-shadow:0 0 8px #00e5ff,0 0 18px #00e5ff;
+}
+
+.c6{
+    color:#2979ff;
+    text-shadow:0 0 8px #2979ff,0 0 18px #2979ff;
+}
+
+.c7{
+    color:#7c4dff;
+    text-shadow:0 0 8px #7c4dff,0 0 18px #7c4dff;
+}
+
+.c8{
+    color:#d500f9;
+    text-shadow:0 0 8px #d500f9,0 0 18px #d500f9;
+}
+
+.c9{
+    color:#ff00c8;
+    text-shadow:0 0 8px #ff00c8,0 0 18px #ff00c8;
+}
+
+.c10{
+    color:#ff4081;
+    text-shadow:0 0 8px #ff4081,0 0 18px #ff4081;
+}
+
+/* SLOW SCROLL */
+
+@keyframes scrollWords{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    100%{
+        transform:translateY(-3500px);
+    }
+}
+
+/* GLOW */
+
+@keyframes pulse{
+
+    0%,100%{
+        opacity:.65;
+    }
+
+    50%{
+        opacity:1;
+    }
+}
+
+/* TOP FADE */
+
+.scene:before{
+    content:"";
+
+    position:absolute;
+
+    top:0;
+    left:0;
+
+    width:100%;
+    height:16vh;
+
+    z-index:10;
+
+    pointer-events:none;
+
+    background:linear-gradient(
+        to bottom,
+        #000 5%,
+        transparent
+    );
+}
+
+/* BOTTOM FADE */
+
+.scene:after{
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+    left:0;
+
+    width:100%;
+    height:16vh;
+
+    z-index:10;
+
+    pointer-events:none;
+
+    background:linear-gradient(
+        to top,
+        #000 5%,
+        transparent
+    );
+}
+</style>
+</head>
+
+<body>
+
+<div class="scene">
+
+    <!-- SONG -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- MUSIC BUTTON -->
+    <button id="playBtn">
+        ▶ PLAY MUSIC
+    </button>
+
+    <!-- SCROLLING TEXT -->
+    <div class="words">
+
+        <span class="line c1">
+            I AM AAYAN
+        </span>
+
+        <span class="line c2">
+            Sometimes, life makes you step away from the things you love.
+        </span>
+
+        <span class="line c3">
+            For some personal reasons, I am leaving the game for now.
+        </span>
+
+        <span class="line c4">
+            There are some things going on in my life that I cannot explain or share.
+        </span>
+
+        <span class="line c5">
+            I hope you understand that this decision was not easy for me.
+        </span>
+
+        <span class="line c6">
+            I will still be around sometimes, but I will be less active.
+        </span>
+
+        <span class="line c7">
+            You may see me on Snapchat from time to time.
+        </span>
+
+        <span class="line c8">
+            I may not be online like before,
+            but that does not mean I forgot the memories.
+        </span>
+
+        <span class="line c9">
+            Thank you to everyone who stayed with me,
+            supported me,
+            played with me,
+            and made these moments special.
+        </span>
+
+        <span class="line c10">
+            Maybe this is not goodbye forever.
+        </span>
+
+        <span class="line c1">
+            Maybe I just need some time away.
+        </span>
+
+        <span class="line c2">
+            Take care of yourselves.
+        </span>
+
+        <span class="line c3">
+            Keep supporting each other.
+        </span>
+
+        <span class="line c4">
+            ALPHA ON TOP
+        </span>
+
+        <span class="line c5">
+            ZZ ON TOP
+        </span>
+
+        <span class="line c6">
+            LOVE YOU PARTH
+        </span>
+
+        <span class="line c7">
+            PARTH X ALPHA X EGO
+        </span>
+
+        <span class="line c8">
+            I WILL BE BACK
+        </span>
+
+        <span class="line c9">
+            ZZ ON TOP
+        </span>
+
+        <span class="line c10">
+            — AAYAN
+        </span>
+
+    </div>
+
+</div>
+
+<script>
+
+const music = document.getElementById("bgMusic");
+const button = document.getElementById("playBtn");
+
+music.volume = 0.85;
+
+button.addEventListener("click", async () => {
+
+    try{
+
+        if(music.paused){
+
+            await music.play();
+
+            button.textContent = "🔊 MUSIC ON";
+
+        }else{
+
+            music.pause();
+
+            button.textContent = "▶ PLAY MUSIC";
+
+        }
+
+    }catch(error){
+
+        button.textContent = "❌ SONG NOT FOUND";
+
+        console.log(error);
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
